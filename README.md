@@ -14,7 +14,7 @@ The original problem was inspired by real-world data processing experience durin
 - Rule-based consistency classification
 - Explainable prediction output
 - Synthetic sample dataset
-- Basic project structure for future Streamlit dashboard and evaluation
+- Basic pro4ject structure for future Streamlit dashboard and evaluation
 
 ## Project Structure
 
