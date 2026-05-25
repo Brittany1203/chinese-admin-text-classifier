@@ -46,3 +46,14 @@ chinese-admin-text-classifier/
 ├── app.py
 ├── README.md
 └── requirements.txt
+```
+
+## Demo Screenshots
+
+### Classification Dashboard
+
+![Classification Dashboard](screenshots/classification_dashboard.png)
+
+### Article HTML Formatter
+
+![Article HTML Formatter](screenshots/html_formatter_demo.png)
