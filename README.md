@@ -29,6 +29,16 @@ The project also includes a simple HTML formatter that converts crawled article 
 
 This feature reflects a common step in government website crawler workflows, where extracted metadata and article content need to be cleaned and converted into a consistent format for downstream storage or display.
 
+## Demo Screenshots
+
+### Classification Dashboard
+
+![Classification Dashboard](screenshots/classification_dashboard.png)
+
+### Article HTML Formatter
+
+![Article HTML Formatter](screenshots/html_formatter_demo.png)
+
 ## Project Structure
 
 ```text
@@ -48,12 +58,37 @@ chinese-admin-text-classifier/
 └── requirements.txt
 ```
 
-## Demo Screenshots
+## How to Run
 
-### Classification Dashboard
+1. Clone this repository:
 
-![Classification Dashboard](screenshots/classification_dashboard.png)
+```bash
+git clone https://github.com/Brittany1203/chinese-admin-text-classifier.git
+cd chinese-admin-text-classifier
+```
 
-### Article HTML Formatter
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-![Article HTML Formatter](screenshots/html_formatter_demo.png)
+3. Run the streamlit app:
+```bash
+streamlit run app.py
+```
+
+## Project Workflow
+
+1. Load synthetic government website column data.
+2. Detect the administrative level of each website.
+3. Apply rule-based consistency checks.
+4. Generate predicted labels, rule types, and explanation reasons.
+5. Compare predictions with manual labels for evaluation.
+6. Display results and rule distribution in a Streamlit dashboard.
+7. Convert crawled article metadata into standardized HTML format.
+
+## Limitations and Future Work
+
+- The current dataset is synthetic and designed for demonstration purposes.
+- The rule engine currently focuses on selected administrative hierarchy mismatch cases.
+- Future work may include expanding the institution keyword dictionary, adding alias normalization, improving parent-column logic, and evaluating the system on a larger manually labeled dataset.
