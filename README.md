@@ -21,6 +21,13 @@ The original problem was inspired by real-world data processing experience durin
 - Explainable prediction output
 - Synthetic sample dataset
 - Basic pro4ject structure for future Streamlit dashboard and evaluation
+- Standardized HTML formatting for crawled article metadata
+
+## Article HTML Formatter
+
+The project also includes a simple HTML formatter that converts crawled article metadata into a standardized HTML structure. The formatter takes an article title, publication date, publisher, and body content as input, and generates both raw HTML code and a rendered preview in the Streamlit app.
+
+This feature reflects a common step in government website crawler workflows, where extracted metadata and article content need to be cleaned and converted into a consistent format for downstream storage or display.
 
 ## Project Structure
 
