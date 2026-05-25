@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 
 from src.rule_engine import classify_column
+from src.html_formatter import format_article_html
+import streamlit.components.v1 as components
 
 
 st.set_page_config(
@@ -80,3 +82,35 @@ else:
         file_name="classification_results.csv",
         mime="text/csv",
     )
+
+st.divider()
+
+st.subheader("Article HTML Formatter Demo")
+
+st.markdown(
+    """
+This section demonstrates how crawled article metadata can be converted into a
+standardized HTML structure, including title, publication date, publisher, and body content.
+"""
+)
+
+demo_title = st.text_input("Article Title", "关于加强政府网站信息公开工作的通知")
+demo_date = st.text_input("Publication Date", "2024-06-01")
+demo_publisher = st.text_input("Publisher", "A区人民政府")
+demo_content = st.text_area(
+    "Article Content",
+    "为进一步规范政府网站信息公开工作，提高政务公开质量，现将有关事项通知如下。",
+)
+
+html_output = format_article_html(
+    title=demo_title,
+    publish_date=demo_date,
+    publisher=demo_publisher,
+    content=demo_content,
+)
+
+st.markdown("### Generated HTML")
+st.code(html_output, language="html")
+
+st.markdown("### HTML Preview")
+st.components.v1.html(html_output, height=250, scrolling=True)
